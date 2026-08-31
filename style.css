@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+html{
+    height: 100%; /*covers whole browser window*/
+    scroll-behavior: smooth;
+}
+
+.page_layout{
+    position: relative;
+    max-width: 1920px;
+}
+
+header{
+    height: 100px;
+    background-color: #E76C1F;
+    display: flex;
+    justify-content: center; /*to position header always in center of 1920px max-width*/
+    position: absolute;
+    width: 100%; /*forces header to the same width as page_layout*/
+    /*necessary because header is position: absolute*/
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+.header_wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-Width: 1440px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.logo_header{
+    height: 40px;
+    width: 95px;
+}
+
+.menu_button{
+    height: 40px;
+    width: 40px;
+}
+
+.hero_section{
+    position: relative;
+    padding-top: 60px;
+    max-width: 1440px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hero_picture{
+    max-width: 1440px;
+    width: 100%;
+    height: auto;
+}
+
+.burger_logo{
+    position: absolute;
+    transform: translateY(50%); /*moves logo 50% of its own height downwards*/
+    left: 50%; /*left side of pic is located at the center of the hero_picture*/
+    transform: translate(-50%, 180%); 
+    height: 200px;
+    width: 200px;
+    z-index: 2;
+    width: clamp(100px, 15vw, 200px); /*support by AI - too small steps for responsiveness*/
+    height: clamp(100px, 15vw, 200px);
+}
+
+.restaurant_info{
+    padding-top: 80px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1{
+    font-family:sans-serif;
+    font-weight: 700;
+}
+
+.highlight_colour{
+    color: #E76C1F;
+}
+
+.title_recommendation{
+    display: flex;
+    flex-direction: row;
+}
+
+.recommendation{
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.star_icon{
+    margin-right: 10px;
+}
+
+p{
+    font-family:sans-serif;
+}
+
+
+/*local font
+@font-face {
+    font-family: "Figtree";
+    src: url("./fonts/Figtree-Regular.woff2") format("woff2");
+    font-weight: 400;
+    font-style: normal;
+}*/
