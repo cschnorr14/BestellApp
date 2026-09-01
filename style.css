@@ -110,6 +110,24 @@ p{
     font-family:sans-serif;
 }
 
+footer{
+    background-color: #E76C1F;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.footer_wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-Width: 1440px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
 
 /*local font
 @font-face {
