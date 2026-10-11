@@ -1,40 +1,42 @@
-function calculatePurchase(){
+function calculatePurchase() {
 
 }
 
-function addItemToBasket(){
+function addItemToBasket() {
 
 }
 
-function deleteItemFromBasket(){
+function deleteItemFromBasket() {
 
 }
 
-function completePurchase(){
+function completePurchase() {
 
 }
 
 //render functions
 
-function renderMenuCategories(){
+function renderMenuCategories() {
     let menuCategoriesRef = document.getElementById('food_categories');
     let allCategoriesHtml = "";
-    for(let index = 0; index < foodCategories.length; index++){
-        allCategoriesHtml+=getFoodCategoriesTemplate(foodCategories[index]);
+    for (let index = 0; index < foodCategories.length; index++) {
+        allCategoriesHtml += getFoodCategoriesTemplate(foodCategories[index]);
     }
     menuCategoriesRef.innerHTML = allCategoriesHtml;
 }
 
-function renderMainsCategories(){
-    let mainsCategoriesRef = document.getElementById('main_categories');
-    let allMainCategoriesHtml = "";
-    for(let index = 0; index < mains.length; index++){
-        allMainCategoriesHtml+=getMainsCategoriesTemplate(mains[index]);
+function renderMainsCategories() {
+    let mainsCategoriesRef = document.getElementById('subcategories-Mains');
+    if (mainsCategoriesRef) {
+        let allMainCategoriesHtml = "";
+        for (let index = 0; index < mains.length; index++) {
+            allMainCategoriesHtml += getMainsCategoriesTemplate(mains[index].subcategoryName);
+        }
+        mainsCategoriesRef.innerHTML = allMainCategoriesHtml;
     }
-    mainsCategoriesRef.innerHTML = allMainCategoriesHtml;
 }
 
- function renderOnload() {
+function renderOnload() {
     renderMenuCategories();
     renderMainsCategories();
 }

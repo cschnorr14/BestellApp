@@ -1,36 +1,36 @@
-function getFoodCategoriesTemplate(name){
-    return`
+function getFoodCategoriesTemplate(name) {
+    let categoryID = name;
+    return `
     <div class="category">
     <div class="categoryName">
     <h2>${name}</h2>
     </div>
+    <div id="subcategories-${categoryID}"></div>
     </div>
     `
 }
 
-function getMainsCategoriesTemplate(name){
-    return`
+function getMainsCategoriesTemplate(name) {
+    return `
     <div class="mainsName">
     <h3>${name}</h3>
     </div>
     `
-    /*id="main_categories" = Frage: Wie bekomme ich diese ID in den HTML-Code implementiert, damit die Mains-Unterkategorien erscheinen, wenn ich die Kategorien selbst dynamisch render?*/ 
+}
+
+function getCategoryTemplate() {
 
 }
 
-function getCategoryTemplate(){
+
+function getAddToBasketTemplate() {
 
 }
 
-
-function getAddToBasketTemplate(){
-
-}
-
-function getBasketTemplate(){
+function getBasketTemplate() {
 
 }
 
-function getOrderConfirmedTemplate(){
-    
+function getOrderConfirmedTemplate() {
+
 }

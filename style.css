@@ -134,7 +134,13 @@ footer{
     background-color: #E76C1F;
     padding: 5px 30px;
     color: antiquewhite;
-    
+}
+
+.mainsName{
+    font-family: sans-serif;
+    background-color: darksalmon;
+    padding: 5px 40px;
+    color:dimgrey;
 }
 
 
