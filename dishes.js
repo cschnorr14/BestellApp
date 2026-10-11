@@ -1,3 +1,10 @@
+let foodCategories = [
+    "Starters",
+    "Mains",
+    "Sides",
+    "Dessert"
+];
+
 let starters = [
     {
         "name": "Bruschetta",

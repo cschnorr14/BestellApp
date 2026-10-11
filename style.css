@@ -108,6 +108,7 @@ h1{
 
 p{
     font-family:sans-serif;
+    padding: 20px;
 }
 
 footer{
@@ -126,6 +127,14 @@ footer{
     max-Width: 1440px;
     margin-left: 100px;
     margin-right: 100px;
+}
+
+.categoryName{
+    font-family: sans-serif;
+    background-color: #E76C1F;
+    padding: 5px 30px;
+    color: antiquewhite;
+    
 }
 
 
