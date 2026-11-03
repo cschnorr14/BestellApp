@@ -1,7 +1,4 @@
 function getFoodCategoriesTemplate(name) {
-    /*let categoryID = name;*/
-    /*<div id="subcategories-${categoryID}"></div> statt dishes-container-...*/
-    /*<div id="dishes-container-${name}"></div>*/
     return `
     <div class="category">
     <div class="categoryName">
@@ -13,8 +10,6 @@ function getFoodCategoriesTemplate(name) {
 }
 
 function getMainsCategoriesTemplate(name) {
-    /*<div class="mains-subcategory">*/
-    /*<div id="dishes-subcategory-${name}"></div>*/
     return `
     <div class="mainsName">
     <h3>${name}</h3>
