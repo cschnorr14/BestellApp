@@ -1,25 +1,41 @@
 function getFoodCategoriesTemplate(name) {
-    let categoryID = name;
+    /*let categoryID = name;*/
+    /*<div id="subcategories-${categoryID}"></div> statt dishes-container-...*/
+    /*<div id="dishes-container-${name}"></div>*/
     return `
     <div class="category">
     <div class="categoryName">
     <h2>${name}</h2>
     </div>
-    <div id="subcategories-${categoryID}"></div>
+    <div id="category-${name}"></div> 
     </div>
     `
 }
 
 function getMainsCategoriesTemplate(name) {
+    /*<div class="mains-subcategory">*/
+    /*<div id="dishes-subcategory-${name}"></div>*/
     return `
     <div class="mainsName">
     <h3>${name}</h3>
     </div>
+    <div id="subcategory-${name}"></div>
     `
 }
 
-function getCategoryTemplate() {
-
+function getCategoryTemplate(name, description, price) {
+    /*<img>dishPic</img>*/
+    return `
+    <div class="dish">
+    
+    <div class="dishName">
+    <h5>${name}</h5>
+    </div>
+    <p>${description}</p>
+    <div class="price">${price.toFixed(2)} €</div>
+    <button>Add to basket</button>
+    </div>
+    `
 }
 
 
