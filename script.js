@@ -42,7 +42,8 @@ function renderDishes() {
     if (starterDishesRef) {
         let startersHtml = "";
         for (let index = 0; index < starters.length; index++) {
-            startersHtml += getCategoryTemplate(starters[index].name, starters[index].description, starters[index].price);
+            let coverPic = startersImages[index];
+            startersHtml += getCategoryTemplate(coverPic, starters[index].name, starters[index].description, starters[index].price); 
         }
         starterDishesRef.innerHTML = startersHtml;
     }
@@ -54,18 +55,20 @@ function renderDishes() {
         if (subcategoryRef) {
             let mainsHtml = "";
             for (let j = 0; j < subcategory.details.length; j++) {
+                let coverPic = allMainDishImages[index][j];
                 let dish = subcategory.details[j];
-                mainsHtml += getCategoryTemplate(dish.name, dish.description, dish.price);
+                mainsHtml += getCategoryTemplate(coverPic,dish.name, dish.description, dish.price);
             }
             subcategoryRef.innerHTML = mainsHtml;
-        } 
+        }
     }
 
     let dessertDishesRef = document.getElementById('category-Dessert');
     if (dessertDishesRef) {
         let dessertHtml = "";
         for (let index = 0; index < dessert.length; index++) {
-            dessertHtml += getCategoryTemplate(dessert[index].name, dessert[index].description || "", dessert[index].price);
+            let coverPic = dessertImages[index];
+            dessertHtml += getCategoryTemplate(coverPic, dessert[index].name, dessert[index].description || "", dessert[index].price);
         }
         dessertDishesRef.innerHTML = dessertHtml;
     }
@@ -74,7 +77,8 @@ function renderDishes() {
     if (sidesDishesRef) {
         let sidesHtml = "";
         for (let index = 0; index < sides.length; index++) {
-            sidesHtml += getCategoryTemplate(sides[index].name, sides[index].description || "", sides[index].price);
+            let coverPic = sidesImages[index];
+            sidesHtml += getCategoryTemplate(coverPic, sides[index].name, sides[index].description || "", sides[index].price);
         }
         sidesDishesRef.innerHTML = sidesHtml;
     }

@@ -18,28 +18,42 @@ function getMainsCategoriesTemplate(name) {
     `
 }
 
-function getCategoryTemplate(name, description, price) {
-    /*<img>dishPic</img>*/
+function getCategoryTemplate(coverPic, name, description, price) {
     return `
     <div class="dish">
-    
+    <img class="dishImg" src="./img/dishImages/${coverPic}" alt="dish_image"></img>
+    <div class="dishContent">
+    <div class="dishNamePrice">
     <div class="dishName">
-    <h5>${name}</h5>
+    <h4>${name}</h4>
     </div>
-    <p>${description}</p>
     <div class="price">${price.toFixed(2)} €</div>
+    </div>
+    <br>
+    <div class="descrAdd">
+    <div class="description">
+    <p>${description}</p></div>
     <button>Add to basket</button>
+    </div>
+    </div>
     </div>
     `
 }
-
 
 function getAddToBasketTemplate() {
 
 }
 
-function getBasketTemplate() {
+function getEmptyBasketTemplate() {
+    return `
+    
+    `
+}
 
+function getFilledBasketTemplate() {
+    return `
+    
+    `
 }
 
 function getOrderConfirmedTemplate() {

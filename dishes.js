@@ -92,20 +92,20 @@ let mains = [
         "subcategoryName": "Burger",
         "details": [
             {
-                "name": "All meat burger",
-                "description": "Beef, Bacon, Dill pickles, Smoked cheese, Ketchup, BBQ sauce",
+                "name": "All Meat Burger",
+                "description": "Rind, Speck, Gurken, Käse, Ketchup, BBQ sauce",
                 "price": 15.95,
                 "inBasket": false,
             },
             {
-                "name": "Beef red burger",
-                "description": "Beef, Cheese, Tomatoes, Lettuce, Onion",
+                "name": "Beef Red Burger",
+                "description": "Rind, Käse, Tomaten, Salat, Zwiebeln",
                 "price": 14.95,
                 "inBasket": false,
             },
             {
-                "name": "Big chicken burger",
-                "description": "Chicken, Cheese, Tomatoes, Lettuce, Onion, Bell pepper",
+                "name": "Big Chicken Burger",
+                "description": "Hähnchen, Käse, Tomaten, Salat, Zwiebeln, Pfeffer",
                 "price": 14.95,
                 "inBasket": false,
             }
@@ -116,8 +116,8 @@ let mains = [
         "subcategoryName": "Salad",
         "details": [
             {
-                "name": "Warm beef arugula salad",
-                "description": "Beef, Arugula, Field salad, Greek feta, Cherry tomatoes, Sun-dried Tomatoes, Balsamic-vinegar dressing",
+                "name": "Warm Beef Rucola Salad",
+                "description": "Rind, Rucola, Salat, Feta, Cherry Tomaten, getrocknete Tomaten, Balsamico-Dressing",
                 "price": 15.95,
                 "inBasket": false,
             },
@@ -128,14 +128,14 @@ let mains = [
                 "inBasket": false,
             },
             {
-                "name": "Green salad with seafood",
-                "description": "Mixed greens, Cherry tomatoes, Red onion, Mussels, Squid rings, Shrimp, Dijon mustard-lemon dressing with dill",
+                "name": "Salat mit Meeresfrüchten",
+                "description": "Salat, Cherry Tomaten, Zwiebeln, Muscheln, Tintenfisch, Shrimps, Honig-Senf-Dressing",
                 "price": 14.95,
                 "inBasket": false,
             },
             {
-                "name": "Vegan green salad with tofu",
-                "description": "Green salad, Cherry tomatoes, Cucumber, Baby spinach, Edamame, Radishes, Bittercress, Tofu, Peanuts",
+                "name": "Salat mit Tofu",
+                "description": "Salat, Cherry Tomaten, Gurke, Spinat, Edamame, Tofu, Erdnüsse",
                 "price": 14.95,
                 "inBasket": false,
             }
@@ -187,5 +187,38 @@ let sides = [
         "name": "Gemüsesticks",
         "price": 3.95,
         "inBasket": false,
-    },
+    }
+]
+
+let startersImages = [
+    "ImgBruschetta.jpg", "ImgCarpaccio.jpg", "ImgVitelloTonnato.jpeg", "ImgBeilagensalat.jpg"
+];
+
+let sidesImages = [
+    "ImgPommes.jpg", "ImgSweetPotatoes.jpg", "ImgKartoffelspalten.jpg", "ImgGemuesesticks.jpeg"
+];
+
+let dessertImages = [
+    "ImgTiramisu.jpg", "ImgCheesecake.jpeg", "ImgMascarpone.jpeg", "ImgCarrotCake.jpg"
+];
+
+
+let pizzaImages = [
+    "ImgMargherita.jpg", "ImgTonno.jpeg", "ImgHawaii.jpeg", "ImgCapriciosa.jpeg" 
+];
+
+let pastaImages = [
+    "ImgPomodoro.jpeg", "ImgBolognese.jpeg", "ImgCarbonara.jpeg"
+];
+
+let burgerImages = [
+    "ImgAllMeat.jpg", "ImgBeefRed.jpg", "ImgBigChicken.jpg"
+];
+
+let saladImages = [
+    "ImgWarmBeefRucola.jpg", "ImgCaesarSalad.jpeg", "ImgSeafood.jpg", "ImgTofu.jpg"
+];
+
+let allMainDishImages = [
+    pizzaImages, pastaImages, burgerImages, saladImages
 ]
