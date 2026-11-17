@@ -46,7 +46,14 @@ function getAddToBasketTemplate() {
 
 function getEmptyBasketTemplate() {
     return `
-    
+    <div class="emptyBasket">
+    <h3>Your Basket</h3>
+    <br>
+    <p>Nothing here yet.<br>
+    Go ahead and choose something<br>
+    delicious!</p>
+    <img class="cart" src="./img/basket/basket.png" alt="cart logo"></img>
+    </div>
     `
 }
 

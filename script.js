@@ -84,8 +84,16 @@ function renderDishes() {
     }
 }
 
+function renderEmptyBasket(){
+    let emptyBasketRef = document.getElementById('basket');
+    let basketHtml = "";
+    basketHtml += getEmptyBasketTemplate();
+    emptyBasketRef.innerHTML = basketHtml;
+}
+
 function renderOnload() {
     renderMenuCategories();
     renderMainsCategories();
     renderDishes();
+    renderEmptyBasket();
 }

@@ -129,7 +129,6 @@ footer{
 
 .menu_categories{
         font-family: sans-serif;
-
 }
 
 .categoryName{
@@ -137,6 +136,8 @@ footer{
     padding: 5px 80px;
     color: antiquewhite;
     margin-bottom: 12px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .mainsName{
@@ -199,6 +200,49 @@ button{
     align-self: flex-end;
 }
 
+.wrapper{
+    width: 100%;
+    position: relative;
+}
+
+#basket{
+    float: right; /*moves basket to the right without cutting the orange bars*/
+    position: sticky;
+    top: 20px; /*distance to top as soon as scrolling starts*/
+    width: 300px;
+    z-index: 999;
+}
+
+.emptyBasket{
+    font-family: sans-serif;
+    text-align: center;
+    background-color: #363534;
+    color: #E7C3AD;
+    padding: 30px 15px;
+    font-size: 16px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    max-height: 750px;
+    width: 100%; /*to completely fill the 300px-width of basket*/
+    margin-left: auto;
+    height: calc(100vh - 140px); /*to adapt automatically to the screen height*/
+    overflow-y: auto; 
+    /*bottom: auto;
+    z-index: 999;
+    width: 300px;
+    position: fixed;
+    right: 0px;
+    position: sticky;*/
+    /*float: right; /*moves basket to the right without cutting the orange bars*/
+    /*top: 20px; /*distance to top as soon as scrolling starts*/
+}
+
+.cart{
+    width: 130px;
+    height: 130px;
+    margin-top: 50px;
+}
+
 
 
 
@@ -216,3 +260,18 @@ button{
     margin-right: 200px;
 }
 }
+
+/*responsiveness Einkaufskorb KI-Vorschlag
+@media (max-width: 768px) {
+  .einkaufskorb {
+    top: auto !important; /* Wichtig: Überschreibt den per JS gesetzten top-Wert! */
+    /*bottom: 0;
+    left: 0;
+    right: 0;
+    
+    width: 100%;
+    max-height: 45vh; /* Nimmt maximal knapp den halben Bildschirm ein */
+    /*border-radius: 16px 16px 0 0; /* Abgerundete Ecken nur oben */
+    /*box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);*/
+  /*}
+}*/
