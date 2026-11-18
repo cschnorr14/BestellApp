@@ -222,3 +222,5 @@ let saladImages = [
 let allMainDishImages = [
     pizzaImages, pastaImages, burgerImages, saladImages
 ]
+
+let basket = []

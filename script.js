@@ -2,8 +2,35 @@ function calculatePurchase() {
 
 }
 
-function addItemToBasket() {
+//To Do
+function addItemToBasket(button, name, price) {
+    let included = false;
+    
+    for(let index = 0; index < basket.length; index++){
+        if(basket[index].name == name){ /*indicates that dish already exists in basket -> +1 amount*/
+            basket[index].amount++;
+            included = true;
+        }
+    }
+    if(included == false){
+            let newItem = {
+                name: name,
+                price: price,
+                amount: 1
+            };
+        basket.push(newItem);
+    }
+    changeToAdded(button);
+    console.log(basket);
+}
 
+function changeToAdded(button) {
+    if (button.innerHTML == "Add to basket") {
+        button.anzahl = 1;
+    } else {
+        button.anzahl++;
+    }
+    button.innerHTML = "Added" + " " + button.anzahl;
 }
 
 function deleteItemFromBasket() {
@@ -43,7 +70,7 @@ function renderDishes() {
         let startersHtml = "";
         for (let index = 0; index < starters.length; index++) {
             let coverPic = startersImages[index];
-            startersHtml += getCategoryTemplate(coverPic, starters[index].name, starters[index].description, starters[index].price); 
+            startersHtml += getCategoryTemplate(coverPic, starters[index].name, starters[index].description, starters[index].price);
         }
         starterDishesRef.innerHTML = startersHtml;
     }
@@ -57,7 +84,7 @@ function renderDishes() {
             for (let j = 0; j < subcategory.details.length; j++) {
                 let coverPic = allMainDishImages[index][j];
                 let dish = subcategory.details[j];
-                mainsHtml += getCategoryTemplate(coverPic,dish.name, dish.description, dish.price);
+                mainsHtml += getCategoryTemplate(coverPic, dish.name, dish.description, dish.price);
             }
             subcategoryRef.innerHTML = mainsHtml;
         }
@@ -84,11 +111,16 @@ function renderDishes() {
     }
 }
 
-function renderEmptyBasket(){
+function renderEmptyBasket() {
     let emptyBasketRef = document.getElementById('basket');
     let basketHtml = "";
     basketHtml += getEmptyBasketTemplate();
     emptyBasketRef.innerHTML = basketHtml;
+}
+
+//To Do
+function renderFilledBasket() {
+
 }
 
 function renderOnload() {

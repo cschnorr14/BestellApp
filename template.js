@@ -33,7 +33,7 @@ function getCategoryTemplate(coverPic, name, description, price) {
     <div class="descrAdd">
     <div class="description">
     <p>${description}</p></div>
-    <button>Add to basket</button>
+    <button class="add-btn" onclick="addItemToBasket(this, '${name}', ${price})">Add to basket</button>
     </div>
     </div>
     </div>
@@ -57,6 +57,7 @@ function getEmptyBasketTemplate() {
     `
 }
 
+//To Do
 function getFilledBasketTemplate() {
     return `
     

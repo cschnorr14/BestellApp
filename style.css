@@ -209,7 +209,7 @@ button{
     float: right; /*moves basket to the right without cutting the orange bars*/
     position: sticky;
     top: 20px; /*distance to top as soon as scrolling starts*/
-    width: 300px;
+    width: 350px;
     z-index: 999;
 }
 
