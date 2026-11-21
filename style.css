@@ -47,6 +47,10 @@ header{
     width: 40px;
 }
 
+button{
+    cursor: pointer;
+}
+
 .hero_section{
     position: relative;
     padding-top: 60px;
@@ -213,7 +217,7 @@ button{
     z-index: 999;
 }
 
-.emptyBasket{
+.basket{
     font-family: sans-serif;
     text-align: center;
     background-color: #363534;
@@ -227,20 +231,36 @@ button{
     margin-left: auto;
     height: calc(100vh - 140px); /*to adapt automatically to the screen height*/
     overflow-y: auto; 
-    /*bottom: auto;
-    z-index: 999;
-    width: 300px;
-    position: fixed;
-    right: 0px;
-    position: sticky;*/
-    /*float: right; /*moves basket to the right without cutting the orange bars*/
-    /*top: 20px; /*distance to top as soon as scrolling starts*/
 }
 
 .cart{
     width: 130px;
     height: 130px;
     margin-top: 50px;
+}
+
+.dishInBasket{
+    background-color:#E7C3AD;
+    color:#363534;
+    font-size: 16px;
+    border-radius: 10px;
+    padding: 15px 20px;
+    text-align: left;
+}
+
+.amountPriceWrapper{
+    display: flex;
+   justify-content: space-between;
+}
+
+.deleteIcon{
+    width: 10px;
+    height: 12px;
+}
+
+.basketBtn{
+    background-color: transparent;
+    border:none;
 }
 
 

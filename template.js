@@ -40,13 +40,9 @@ function getCategoryTemplate(coverPic, name, description, price) {
     `
 }
 
-function getAddToBasketTemplate() {
-
-}
-
 function getEmptyBasketTemplate() {
     return `
-    <div class="emptyBasket">
+    <div class="basket">
     <h3>Your Basket</h3>
     <br>
     <p>Nothing here yet.<br>
@@ -58,10 +54,44 @@ function getEmptyBasketTemplate() {
 }
 
 //To Do
-function getFilledBasketTemplate() {
+function getFilledBasketTemplate(amount, name, price) {
+    if(amount == 1){
     return `
-    
+    <div class="basket">
+    <h3>Your Basket</h3>
+    <br>
+    <div class="dishInBasket">
+    <p>${amount} x ${name}</p>
+    <br>
+    <div class=amountPriceWrapper>
+    <div>
+    <button class="basketBtn"><img class="deleteIcon" src="./img/basket/delete.png" alt=""></img></button>${amount}<button class="basketBtn" onclick="addItemToBasket(this, '${name}', ${price})"> + </button>
+    </div>
+    <p>${price} €</p>
+    </div>
+    </div>
+    </div>
     `
+    }if(amount>1){
+        return `
+    <div class="basket">
+    <h3>Your Basket</h3>
+    <br>
+    <div class="dishInBasket">
+    <p>${amount} x ${name}</p>
+    <br>
+    <div class=amountPriceWrapper>
+    <div>
+    <button class="basketBtn" onclick="deleteItemFromBasket(this)"> - </button>${amount}<button class="basketBtn" onclick="addItemToBasket(this, '${name}', ${price})"> + </button>
+    </div>
+    <p>${price} €</p>
+    </div>
+    </div>
+    </div>
+    `
+
+    }
+
 }
 
 function getOrderConfirmedTemplate() {

@@ -2,25 +2,25 @@ function calculatePurchase() {
 
 }
 
-//To Do
 function addItemToBasket(button, name, price) {
     let included = false;
-    
-    for(let index = 0; index < basket.length; index++){
-        if(basket[index].name == name){ /*indicates that dish already exists in basket -> +1 amount*/
+
+    for (let index = 0; index < basket.length; index++) {
+        if (basket[index].name == name) { /*indicates that dish already exists in basket -> +1 amount*/
             basket[index].amount++;
             included = true;
         }
     }
-    if(included == false){
-            let newItem = {
-                name: name,
-                price: price,
-                amount: 1
-            };
+    if (included == false) {
+        let newItem = {
+            name: name,
+            price: price,
+            amount: 1
+        };
         basket.push(newItem);
     }
     changeToAdded(button);
+    renderFilledBasket();
     console.log(basket);
 }
 
@@ -33,7 +33,16 @@ function changeToAdded(button) {
     button.innerHTML = "Added" + " " + button.anzahl;
 }
 
-function deleteItemFromBasket() {
+function deleteItemFromBasket(button) {
+    let included = true;
+
+    for(let index = basket.length; index > 0; index--){
+        if(included == true){
+            basket.splice(index);
+            button.anzahl--;
+        }
+    }
+
 
 }
 
@@ -120,7 +129,17 @@ function renderEmptyBasket() {
 
 //To Do
 function renderFilledBasket() {
+    if (basket.length == 0) {
+        renderEmptyBasket();
+    } else {
+        let filledBasketRef = document.getElementById('basket');
+        let basketHtml = "";
+        for (let index = 0; index < basket.length; index++) {
+            basketHtml += getFilledBasketTemplate(basket[index].amount, basket[index].name, basket[index].price);
+        }
+        filledBasketRef.innerHTML = basketHtml;
 
+    }
 }
 
 function renderOnload() {
