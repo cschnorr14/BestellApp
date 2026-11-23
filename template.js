@@ -33,7 +33,7 @@ function getCategoryTemplate(coverPic, name, description, price) {
     <div class="descrAdd">
     <div class="description">
     <p>${description}</p></div>
-    <button class="add-btn" onclick="addItemToBasket(this, '${name}', ${price})">Add to basket</button>
+    <button id="menu-btn-${name}" class="add-btn" onclick="addItemToBasket(this, '${name}', ${price})">Add to basket</button>
     </div>
     </div>
     </div>

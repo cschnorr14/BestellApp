@@ -19,26 +19,48 @@ function addItemToBasket(button, name, price) {
         };
         basket.push(newItem);
     }
-    changeToAdded(button);
+    /*changeToAdded(button);*/
     renderFilledBasket();
+    updateAddToBasketButton(name);
 }
 
-function changeToAdded(button) {
+/*function changeToAdded(button) {
     if (button.innerHTML == "Add to basket") {
         button.anzahl = 1;
     } else {
         button.anzahl++;
     }
     button.innerHTML = "Added" + " " + button.anzahl;
-}
+}*/
 
 function deleteItemFromBasket(index) {
+    let dishName = basket[index].name; /*save name before dish is deleted*/
     if(basket[index].amount > 1){
         basket[index].amount--;
     }else{
         basket.splice(index, 1);
     }
     renderFilledBasket();
+    updateAddToBasketButton(dishName);
+}
+
+function updateAddToBasketButton(name){
+    /*find the right button belonging to a certain dish, if button isn't found = break*/
+    let addToBasketBtn = document.getElementById(`menu-btn-${name}`); 
+    if(!addToBasketBtn){ 
+        return;
+    }
+    let currentAmount = 0; 
+    for(let index = 0; index< basket.length; index++){
+        if(basket[index].name == name){
+            currentAmount = basket[index].amount; 
+        }
+    } 
+    if(currentAmount > 0){
+        addToBasketBtn.innerText = `Added ${currentAmount}`;
+    }else{
+        addToBasketBtn.innerText = `Add to basket`;
+    }
 }
 
 function completePurchase() {
