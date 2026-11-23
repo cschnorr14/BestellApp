@@ -21,7 +21,6 @@ function addItemToBasket(button, name, price) {
     }
     changeToAdded(button);
     renderFilledBasket();
-    console.log(basket);
 }
 
 function changeToAdded(button) {
@@ -33,17 +32,13 @@ function changeToAdded(button) {
     button.innerHTML = "Added" + " " + button.anzahl;
 }
 
-function deleteItemFromBasket(button) {
-    let included = true;
-
-    for(let index = basket.length; index > 0; index--){
-        if(included == true){
-            basket.splice(index);
-            button.anzahl--;
-        }
+function deleteItemFromBasket(index) {
+    if(basket[index].amount > 1){
+        basket[index].amount--;
+    }else{
+        basket.splice(index, 1);
     }
-
-
+    renderFilledBasket();
 }
 
 function completePurchase() {
@@ -127,16 +122,20 @@ function renderEmptyBasket() {
     emptyBasketRef.innerHTML = basketHtml;
 }
 
-//To Do
 function renderFilledBasket() {
     if (basket.length == 0) {
         renderEmptyBasket();
     } else {
         let filledBasketRef = document.getElementById('basket');
-        let basketHtml = "";
+        let basketHtml = `
+             <div class="basket">
+                <h3>Your Basket</h3>
+                <br>
+        `;
         for (let index = 0; index < basket.length; index++) {
-            basketHtml += getFilledBasketTemplate(basket[index].amount, basket[index].name, basket[index].price);
+            basketHtml += getFilledBasketTemplate(index, basket[index].amount, basket[index].name, basket[index].price);
         }
+        basketHtml += `</div>`;
         filledBasketRef.innerHTML = basketHtml;
 
     }
