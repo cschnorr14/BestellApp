@@ -46,7 +46,6 @@ function completePurchase() {
 }
 
 //render functions:
-
 function renderMenuCategories() {
     let menuCategoriesRef = document.getElementById('food_categories');
     let allCategoriesHtml = "";
