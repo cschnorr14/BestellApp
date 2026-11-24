@@ -249,9 +249,14 @@ button{
     margin-bottom: 5px;
 }
 
+.dishesInBasketWrapper{
+    height: 300px;
+    overflow-y: auto; /*makes div-container scrollable as soon as height is fully used*/
+}
+
 .amountPriceWrapper{
     display: flex;
-   justify-content: space-between;
+    justify-content: space-between;
 }
 
 .deleteIcon{
@@ -264,8 +269,24 @@ button{
     border:none;
 }
 
+.costs{
+    padding: 5px 10px;
+}
 
+.costsElementWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.costsElement{
+    display: flex;
+    margin-bottom: 10px;
+}
 
+.costsSeparator{
+    height: 2px;
+    background-color: #FDEADC;
+    margin-bottom: 5px; 
+}
 
 /*local font
 @font-face {

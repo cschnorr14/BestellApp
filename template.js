@@ -27,7 +27,7 @@ function getCategoryTemplate(coverPic, name, description, price) {
     <div class="dishName">
     <h4>${name}</h4>
     </div>
-    <div class="price">${price.toFixed(2)} €</div>
+    <div class="price">${formatPrice(price)} €</div>
     </div>
     <br>
     <div class="descrAdd">
@@ -70,10 +70,27 @@ function getFilledBasketTemplate(index, amount, name, price) {
     ${amount}
     <button class="basketBtn" onclick="addItemToBasket(this, '${name}', ${price})"> + </button>
     </div>
-    <p>${price} €</p>
+    <p>${formatPrice(price)} €</p>
     </div>
     </div>
     `;
+}
+
+function getTotalCostsTemplate(subtotalPrice, totalPrice){
+    return`
+    <div class="costs">
+            <div class= "costsElementWrapper">
+                <div class="costsElement">Subtotal:</div><div>${subtotalPrice} €</div>
+            </div>
+            <div class= "costsElementWrapper">
+                <div class="costsElement">Delivery Fee:</div><div class="costsElement">4,99€</div>
+            </div>
+            <div class="costsSeparator"></div>
+            <div class= "costsElementWrapper">
+                <div class="costsElement">Total:</div><div>${totalPrice} €</div>
+            </div>
+        </div>
+        `;
 }
 
 function getOrderConfirmedTemplate() {

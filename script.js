@@ -1,10 +1,23 @@
 function calculatePurchase() {
+    let subtotal = 0;
+    let deliveryFee = 4.99;
+    for (index = 0; index < basket.length; index++) {
+        let newSubtotal = basket[index].amount * basket[index].price;
+        subtotal = subtotal + newSubtotal;
+    }
+    let total = subtotal + deliveryFee;
+    return{
+        subtotal: subtotal,
+        total: total
+    };
+}
 
+function formatPrice(price) {
+    return price.toFixed(2).replace('.', ',');
 }
 
 function addItemToBasket(button, name, price) {
     let included = false;
-
     for (let index = 0; index < basket.length; index++) {
         if (basket[index].name == name) { /*indicates that dish already exists in basket -> +1 amount*/
             basket[index].amount++;
@@ -19,46 +32,36 @@ function addItemToBasket(button, name, price) {
         };
         basket.push(newItem);
     }
-    /*changeToAdded(button);*/
     renderFilledBasket();
     updateAddToBasketButton(name);
 }
 
-/*function changeToAdded(button) {
-    if (button.innerHTML == "Add to basket") {
-        button.anzahl = 1;
-    } else {
-        button.anzahl++;
-    }
-    button.innerHTML = "Added" + " " + button.anzahl;
-}*/
-
 function deleteItemFromBasket(index) {
     let dishName = basket[index].name; /*save name before dish is deleted*/
-    if(basket[index].amount > 1){
+    if (basket[index].amount > 1) {
         basket[index].amount--;
-    }else{
+    } else {
         basket.splice(index, 1);
     }
     renderFilledBasket();
     updateAddToBasketButton(dishName);
 }
 
-function updateAddToBasketButton(name){
+function updateAddToBasketButton(name) {
     /*find the right button belonging to a certain dish, if button isn't found = break*/
-    let addToBasketBtn = document.getElementById(`menu-btn-${name}`); 
-    if(!addToBasketBtn){ 
+    let addToBasketBtn = document.getElementById(`menu-btn-${name}`);
+    if (!addToBasketBtn) {
         return;
     }
-    let currentAmount = 0; 
-    for(let index = 0; index< basket.length; index++){
-        if(basket[index].name == name){
-            currentAmount = basket[index].amount; 
+    let currentAmount = 0;
+    for (let index = 0; index < basket.length; index++) {
+        if (basket[index].name == name) {
+            currentAmount = basket[index].amount;
         }
-    } 
-    if(currentAmount > 0){
+    }
+    if (currentAmount > 0) {
         addToBasketBtn.innerText = `Added ${currentAmount}`;
-    }else{
+    } else {
         addToBasketBtn.innerText = `Add to basket`;
     }
 }
@@ -152,13 +155,16 @@ function renderFilledBasket() {
              <div class="basket">
                 <h3>Your Basket</h3>
                 <br>
+                <div class="dishesInBasketWrapper">
         `;
         for (let index = 0; index < basket.length; index++) {
             basketHtml += getFilledBasketTemplate(index, basket[index].amount, basket[index].name, basket[index].price);
         }
         basketHtml += `</div>`;
+        let costs = calculatePurchase();
+        basketHtml += getTotalCostsTemplate(formatPrice(costs.subtotal), formatPrice(costs.total));
+        basketHtml += `</div>`;
         filledBasketRef.innerHTML = basketHtml;
-
     }
 }
 
