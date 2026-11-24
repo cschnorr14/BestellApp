@@ -55,15 +55,19 @@ function getEmptyBasketTemplate() {
 
 function getFilledBasketTemplate(index, amount, name, price) {
     let buttonSymbol;
+    let deleteAllSymbol = "";
     if(amount==1){
         buttonSymbol = `<img class="deleteIcon" src="./img/basket/delete.png" alt="">`;
     }else{
         buttonSymbol = `-`;
+        deleteAllSymbol = `<img class="deleteIcon" src="./img/basket/delete.png" alt="">`;
     }
     return `
     <div class="dishInBasket">
+    <div class="amountNameWrapper">
     <p>${amount} x ${name}</p>
-    <br>
+    <button class="basketBtn" onclick="deleteItemFromBasketComplete(${index})">${deleteAllSymbol}</button>
+    </div>
     <div class=amountPriceWrapper>
     <div>
     <button class="basketBtn" onclick="deleteItemFromBasket(${index})">${buttonSymbol}</button>

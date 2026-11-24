@@ -259,6 +259,11 @@ button{
     justify-content: space-between;
 }
 
+.amountNameWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
 .deleteIcon{
     width: 10px;
     height: 12px;

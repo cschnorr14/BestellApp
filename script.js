@@ -47,6 +47,13 @@ function deleteItemFromBasket(index) {
     updateAddToBasketButton(dishName);
 }
 
+function deleteItemFromBasketComplete(index) {
+    let dishName = basket[index].name; /*save name before dish is deleted*/
+        basket.splice(index, 1);
+    renderFilledBasket();
+    updateAddToBasketButton(dishName);
+}
+
 function updateAddToBasketButton(name) {
     /*find the right button belonging to a certain dish, if button isn't found = break*/
     let addToBasketBtn = document.getElementById(`menu-btn-${name}`);
