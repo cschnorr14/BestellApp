@@ -250,7 +250,7 @@ button{
 }
 
 .dishesInBasketWrapper{
-    height: 300px;
+    height: 250px;
     overflow-y: auto; /*makes div-container scrollable as soon as height is fully used*/
 }
 
@@ -291,6 +291,16 @@ button{
     height: 2px;
     background-color: #FDEADC;
     margin-bottom: 5px; 
+}
+
+.purchaseBtn{
+    background-color: #E76C1F;
+    color: white;
+    border-radius: 20px;
+    height: 44px;
+    width: 280px;
+    font-weight: 700;
+    border:none;
 }
 
 /*local font

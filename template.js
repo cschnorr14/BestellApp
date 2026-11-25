@@ -94,6 +94,7 @@ function getTotalCostsTemplate(subtotalPrice, totalPrice){
                 <div class="costsElement">Total:</div><div>${totalPrice} €</div>
             </div>
         </div>
+        <button class="purchaseBtn">Buy now (${totalPrice} €)</button>
         `;
 }
 
