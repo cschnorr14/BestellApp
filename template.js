@@ -57,10 +57,10 @@ function getFilledBasketTemplate(index, amount, name, price) {
     let buttonSymbol;
     let deleteAllSymbol = "";
     if(amount==1){
-        buttonSymbol = `<img class="deleteIcon" src="./img/basket/delete.png" alt="">`;
+        buttonSymbol = `<img class="deleteIcon" src="./img/basket/delete.png" alt="deleteIcon">`;
     }else{
         buttonSymbol = `-`;
-        deleteAllSymbol = `<img class="deleteIcon" src="./img/basket/delete.png" alt="">`;
+        deleteAllSymbol = `<img class="deleteIcon" src="./img/basket/delete.png" alt="deleteIcon">`;
     }
     return `
     <div class="dishInBasket">
@@ -94,10 +94,19 @@ function getTotalCostsTemplate(subtotalPrice, totalPrice){
                 <div class="costsElement">Total:</div><div>${totalPrice} €</div>
             </div>
         </div>
-        <button class="purchaseBtn">Buy now (${totalPrice} €)</button>
+        <button class="purchaseBtn" onclick="renderCompletePurchase()">Buy now (${totalPrice} €)</button>
         `;
 }
 
 function getOrderConfirmedTemplate() {
-
+    return`
+    <div class="confirmationMsg"> 
+        <div class="iconWrapper">
+        <div><img onclick="closeConfirmation()" class="closeIcon" src="./img/basket/close.png" alt="closeIcon"></div>
+        <div><img class="truckIcon" src="./img/truck.png" alt="truck"></div>
+        </div>
+        <p class="confirmationTitle">Order confirmed!</p>
+        <p>Your food is on the way!</p>
+    </div>
+    `;
 }

@@ -73,8 +73,11 @@ function updateAddToBasketButton(name) {
     }
 }
 
-function completePurchase() {
-
+function closeConfirmation(){
+    let confirmationRef = document.getElementById('orderConfirmation');
+    if(confirmationRef){
+        confirmationRef.innerHTML = "";
+    } clearTimeout(confirmationTimeout);
 }
 
 //render functions:
@@ -173,6 +176,25 @@ function renderFilledBasket() {
         basketHtml += `</div>`;
         filledBasketRef.innerHTML = basketHtml;
     }
+}
+let confirmationTimeout; /*recent timer*/
+
+function renderCompletePurchase() {
+    let confirmationRef = document.getElementById('orderConfirmation');
+    let confirmationHtml = "";
+    confirmationHtml += getOrderConfirmedTemplate();
+    confirmationRef.innerHTML = confirmationHtml;
+
+    for(let index = 0; index<basket.length; index++){
+        let dishName = basket[index].name;
+        basket[index].amount = 0;
+        updateAddToBasketButton(dishName);
+    }
+    basket.length = 0;
+    renderEmptyBasket();
+    /*to stop previous timer & reset to 3seconds */
+    clearTimeout(confirmationTimeout);
+    confirmationTimeout = setTimeout(closeConfirmation, 3000);
 }
 
 function renderOnload() {
