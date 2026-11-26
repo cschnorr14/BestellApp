@@ -29,7 +29,7 @@ function getCategoryTemplate(coverPic, name, description, price) {
     </div>
     <div class="price">${formatPrice(price)} €</div>
     </div>
-    <br>
+   
     <div class="descrAdd">
     <div class="description">
     <p>${description}</p></div>

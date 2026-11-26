@@ -177,6 +177,7 @@ function renderFilledBasket() {
         filledBasketRef.innerHTML = basketHtml;
     }
 }
+
 let confirmationTimeout; /*recent timer*/
 
 function renderCompletePurchase() {

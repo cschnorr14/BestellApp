@@ -179,6 +179,7 @@ footer{
     justify-content: space-between;
     padding-left: 30px;
     padding-top: 5px;
+    margin-bottom: 10px;
 }
 
 h4{
@@ -356,21 +357,28 @@ button{
 /*responsive design*/
 @media(max-width: 1000px) {
     .dish{
-    margin-right: 200px;
+    margin-right: 400px;
+    margin-left: 30px;
 }
 }
 
-/*responsiveness Einkaufskorb KI-Vorschlag
-@media (max-width: 768px) {
-  .einkaufskorb {
-    top: auto !important; /* Wichtig: Überschreibt den per JS gesetzten top-Wert! */
-    /*bottom: 0;
-    left: 0;
-    right: 0;
-    
-    width: 100%;
-    max-height: 45vh; /* Nimmt maximal knapp den halben Bildschirm ein */
-    /*border-radius: 16px 16px 0 0; /* Abgerundete Ecken nur oben */
-    /*box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.15);*/
-  /*}
-}*/
+@media(max-width: 950px) {
+    #basket{
+        width: 300px;
+    }
+
+    .dish{
+    margin-right: 350px;
+    margin-left: 30px;
+}
+}
+
+@media(max-width: 820px) {
+    .dish{
+        margin-right: 320px;
+    }
+}
+
+/*TO DO: ab 800px-Breite Warenkorb in footer übertragen!*/
+@media(max-width: 800px) {
+}
